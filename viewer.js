@@ -31,7 +31,7 @@
     function init() {
         currentPose = poses[0];
         if (window.location.hash) {
-            const id = parseInt(window.location.hash.substr(1))
+            const id = parseInt(window.location.hash.substr(1));
             if (!isNaN(id)) {
                 for (let pose of poses) {
                     if (pose.id === id) {
@@ -40,9 +40,8 @@
                     }
                 }
             }
-            updateSearch();
         }
-
+        updateSearch();
         var thumbContainer = document.getElementById("viewer-thumb");
         for (let i = 0; i < 36; i++) {
             const img = document.createElement("img");
@@ -57,9 +56,7 @@
             for (let tag of pose.tags)
                 if (tags[tag]) tags[tag]++;
                 else tags[tag] = 1;
-        console.log(tags);
         for (let [tag,count] of Object.entries(tags)) {
-            console.log(tag);
             let div = document.createElement("div");
             div.innerText = tag + " ("+count+")";
             div.dataset.tag = tag;
