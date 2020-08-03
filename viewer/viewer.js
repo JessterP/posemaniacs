@@ -172,7 +172,7 @@
         }
     },70);
 
-    $.getJSON('data.json', function(data) {
+    $.getJSON('../data.json', function(data) {
         poses = data;
         init();
         $("#loading").remove();

@@ -1,0 +1,90 @@
+
+::-webkit-scrollbar { display: none; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    place-items: center;
+    display: grid;
+}
+
+#loading {
+    background: linear-gradient(to top, #223a70 0%, #ffffff 30%);
+    font-weight: bolder;
+    place-items: center;
+    position: absolute;
+    font-size: 28px;
+    display: grid;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#loading .d:after {
+    content: "";
+    position: relative;
+    width: 0;
+    animation: ld linear infinite 2s;
+}
+
+@keyframes ld {
+    0% {
+        content: ""
+    }
+    25% {
+        content: "."
+    }
+    50% {
+        content: ".."
+    }
+    75% {
+        content: "..."
+    }
+}
+
+body {
+    background-color: #fbf3ff;
+}
+
+#viewer {
+    user-select: none;
+    height: 480px;
+    width: 480px;
+}
+
+#timer {
+    width: 50px;
+}
+
+#skip {
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+    float: right;
+}
+
+#cloak {
+    position: relative;
+    box-shadow: 0 0 5px black;
+    display: inline-block;
+}
+
+#cloak::before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 128px;
+    display: grid;
+    place-items: center;
+}
+
+#cloak.t5::before {content: "5";}
+#cloak.t4::before {content: "4";}
+#cloak.t3::before {content: "3";}
+#cloak.t2::before {content: "2";}
+#cloak.t1::before {content: "1";}
