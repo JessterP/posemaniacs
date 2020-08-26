@@ -3,6 +3,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
     place-items: center;
     display: grid;
 }
@@ -27,6 +28,10 @@ body {
     animation: ld linear infinite 2s;
 }
 
+.hidden {
+    display: none;
+}
+
 @keyframes ld {
     0% {
         content: ""
@@ -40,10 +45,6 @@ body {
     75% {
         content: "..."
     }
-}
-
-body {
-    background-color: #fbf3ff;
 }
 
 #viewer {
@@ -88,3 +89,39 @@ body {
 #cloak.t3::before {content: "3";}
 #cloak.t2::before {content: "2";}
 #cloak.t1::before {content: "1";}
+
+#settings {
+    user-select: none;
+}
+
+.secbtn {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0 0 5px;
+    color: #8c8c8c;
+    width: 32%;
+    margin: 0;
+}
+
+.secbtn.selected {
+    color: black;
+}
+
+.countdown {
+    text-align: center;
+    font-weight: bold;
+    color: #8c8c8c;
+    padding: 20px;
+}
+
+#btncountdown {
+    color: black;
+}
+
+#btnStart {
+    background-color: black;
+    text-align: center;
+    margin: 0 80px;
+    color: white;
+}
