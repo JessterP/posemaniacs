@@ -38,8 +38,9 @@
         let value = timer.value;
         if (value < 5) timer.value = value = 5;
         if (counter / 10> value) {
-            randomPose();
             counter = countdown?-40:0;
+            cloak.classList = "t"+(-counter/10|0);
+            randomPose();
         }
     },100);
 
