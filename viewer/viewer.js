@@ -7,6 +7,7 @@
     let openOriginal = document.getElementById("open-original");
     let search = document.getElementById("search");
     let tagsNode = document.getElementById("tags");
+    let loadAllButton = document.getElementById("load_more");
     let thumbs = [];
     let tags = {};
     let filter = [];
@@ -99,7 +100,8 @@
         window.location.hash = currentPose.id;
     }
 
-    function updateSearch() {
+    function updateSearch(all = false) {
+        loadAllButton.disabled = true;
         var s = skip;
         search.innerHTML = '';
         for (let tag of tagsNode.children) {
@@ -111,9 +113,13 @@
         for (let pose of poses) {
             if (!passesFilter(pose)) continue;
             if (s-- > 0) continue;
-            if (s < -100) break;
+            if (s < -100 && !all) {
+                loadAllButton.disabled = false;
+                break;
+            }
             let img = document.createElement("img");
             img.src = uri + pose.path + "pose_0001_thumb.jpg";
+            img.classList.add("thumb2")
             img.setAttribute('draggable', false);
             img.onclick = () => {
                 currentPose = pose;
@@ -164,6 +170,10 @@
         deg += ev.deltaY * -0.01;
         updateDeg();
     };
+
+    loadAllButton.onclick = e => {
+        updateSearch(true);
+    }
 
     setInterval(()=>{
         if (animation) {

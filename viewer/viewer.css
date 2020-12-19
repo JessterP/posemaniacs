@@ -113,6 +113,9 @@ body {
 .thumb {
     width: 60px;
 }
+.thumb2 {
+    width: 120px;
+}
 
 #open-original {
     padding-bottom: 15px;
@@ -122,4 +125,9 @@ body {
 
 #search {
     text-align: center;
+}
+
+#load_more {
+    height: 60px;
+    width: 100%;
 }
