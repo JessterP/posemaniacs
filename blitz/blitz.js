@@ -23,12 +23,12 @@
     function randomPose() {
         counter = countdown?-40:0;
         let pose = poses[Math.floor(Math.random() * poses.length)];
-        viewer.src = uri + pose.path + img(Math.floor(1));
+        viewer.src = "../poses/" + pose.id + "/" + img(Math.floor(1));
     }
 
     function img(number) {
         const pose = "0000" + number;
-        return "pose_" + pose.substring(pose.length - 4, pose.length) + ".jpg";
+        return pose.substring(pose.length - 4, pose.length) + ".jpg";
     }
 
     setInterval(()=>{

@@ -75,7 +75,8 @@
     }
 
     function updateViewer() {
-        viewer.src = uri + currentPose.path + img(index);
+        // viewer.src = uri + currentPose.path + img(index);
+        viewer.src = '../poses/' + currentPose.id + "/" + img(index);
     }
 
     function fullUpdate() {
@@ -84,7 +85,8 @@
         index = 1;
         updateViewer();
         for (var i = 1; i <= 36; i++) {
-            thumbs[i-1].src = uri + currentPose.path + img(i);
+            // thumbs[i-1].src = uri + currentPose.path + img(i);
+            thumbs[i-1].src = '../poses/' + currentPose.id +"/"+ img(i);
         }
         tagList.innerHTML = '';
         for (let tag of currentPose.tags) {
@@ -118,7 +120,8 @@
                 break;
             }
             let img = document.createElement("img");
-            img.src = uri + pose.path + "pose_0001_thumb.jpg";
+            // img.src = uri + pose.path + "pose_0001_thumb.jpg";
+            img.src = "../poses/" + pose.id + "/0001.jpg";
             img.classList.add("thumb2")
             img.setAttribute('draggable', false);
             img.onclick = () => {
@@ -140,7 +143,7 @@
 
     function img(number) {
         const pose = "0000" + number;
-        return "pose_" + pose.substring(pose.length - 4, pose.length) + ".jpg";
+        return pose.substring(pose.length - 4, pose.length) + ".jpg";
     }
 
     let down = false;
